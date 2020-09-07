@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Game Jam 2018</title>
+		<link href='fonts/OpenSans/OpenSans.css' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="lib/fontello/css/fontello.css" >
+		<link rel="stylesheet" type="text/css" href="css/main.css" >
+
+		<script src="lib/jquery-3.1.1.min.js"></script>
+		<script src="lib/jquery.tmpl.min.js"></script>
+
+		<script src="js/gui.js"></script>
+		<script src="js/data.js"></script>
+		<script src="js/data2.js"></script>
+		<script src="js/inventory.js"></script>
+		<script src="js/people.js"></script>
+		<script src="js/tasks.js"></script>
+		<script src="js/main.js"></script>
+    </head>
+    <body>
+		<div id="header">
+			<h2 id="title">Build Base</h2>
+			<div id="links" style="display:none;">
+				<a href="#" onclick="showCreditsModal()" style="display:none;">Credits</a><span> |</span>
+				<a href="#" onclick="resetButton()">Reset</a> <!-- resetButton() -->
+				<span class="debug">
+				<span> |</span>
+				<a href="#" onclick="save()">Save</a><span> |</span>
+				<a href="#" onclick="load()">Load</a>
+				</span>
+			</div>
+		</div>
+
+		<div id="wrapper">
+			<div class="leftpanel">
+				<table id="items">
+					<tr>
+						<th colspan="2"><span class="icon-right-open-1"></span>Category</th>
+					</tr>
+					<tbody id="drinks">
+					<tr>
+						<td class="name">Item</td>
+						<td class="amount">1</td>
+					</tr>
+					<tr>
+						<td class="name">Item</td>
+						<td class="amount">2</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="mainpanel">
+				<div class="tabs">
+				  <div id="tab_scavenge" class="tablink active" onclick="openTab(event, 't_scavenge')"><span class="icon-tree">Scavenge <span class="tabnum"></span></div>
+				  <div id="tab_cook" class="tablink" onclick="openTab(event, 't_cook')"><span class="icon-food-1">Cook <span class="tabnum"></span></div>
+				  <div id="tab_craft" class="tablink" onclick="openTab(event, 't_craft')"><span class="icon-tools">Build <span class="tabnum"></span></div>
+				  <div id="tab_research" class="tablink" onclick="openTab(event, 't_research')"><span class="icon-beaker">Research <span class="tabnum"></span></div>
+				  <div id="tab_trade" class="tablink" onclick="openTab(event, 't_trade')"><span class="icon-balance-scale">Trade <span class="tabnum"></span></div>
+				</div>
+
+			<div id="t_scavenge" class="tabcontent" style="display: block">
+
+			</div>
+			<div id="t_cook" class="tabcontent">
+				<p>Tab 2</p>
+			</div>
+			<div id="t_craft" class="tabcontent">
+				<p>Tab 2</p>
+			</div>
+			<div id="t_research" class="tabcontent">
+				<p>Tab 2</p>
+			</div>
+			<div id="t_trade" class="tabcontent">
+				<p>Tab 3</p>
+			</div>
+
+		  </div>
+
+		  <div class="rightpanel">
+			<div class="panelheader">Log</div>
+			<div id="logwindow">
+			</div>
+		  </div>
+
+		</div>
+
+		<div id="creditsModal" class="modal">
+			<div class="modal-content">
+				<span class="close" onClick="closeCreditsModal()">&times;</span>
+				<h2>Hope you enjoyed it.</h2>
+				<p><b>Developer:</b> Bryan Davis</p>
+				<h3>Used icon packs:</h3>
+				<p><b><a href="http://fontello.com">Fontelico</a></b> Copyright (C) 2012 by Fontello project</p>
+				<p><b><a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a></b> Copyright (C) 2016 by Dave Gandy</p>
+				<p><b><a href="http://www.entypo.com">Entypo</a></b> Copyright (C) 2012 by Daniel Bruce</p>
+				<p><b><a href="http://thedesignoffice.org/project/modern-pictograms/">Modern Pictograms</a></b> Copyright (c) 2012 by John Caserta. All rights reserved.</p>
+			</div>
+		</div>
+
+		<div id="endGameModal" class="modal">
+			<div class="modal-content">
+				<span class="close" onClick="closeEndGameModal()">&times;</span>
+				<h2>Game Over!</h2>
+				<h3>All your people died.</h3>
+				<div class="textcenter">
+					<button onclick="newgame()">Start new game!</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="winGameModal" class="modal">
+			<div class="modal-content">
+				<span class="close" onClick="closeWinGameModal()">&times;</span>
+				<h2>You built the effigy and won the game!</h2>
+				<p><b>Hope you enjoyed your stay.</b></p>
+
+			</div>
+		</div>
+    </body>
+</html>
